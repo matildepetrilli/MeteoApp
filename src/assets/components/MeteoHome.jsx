@@ -1,6 +1,6 @@
 import { Component } from "react"
 import { Form, Container ,Row,Col} from "react-bootstrap"
-import MeteoCard from "./assets/components/MeteoCard";
+import MeteoCard from "./MeteoCard";
 
 
 class MeteoHome extends Component{

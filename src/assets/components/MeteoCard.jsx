@@ -9,13 +9,19 @@ state={
     meteoData: {},
 }
 
-getmeteoData=() =>{
+getmeteoData= async() =>{
     try{
-fetch(URL + this.props.meteoCity)
+const response = await fetch(URL + this.props.meteoCity)
+if(response.ok){
+   const data= await response.json()
+   console.log('dati da API',data)
+}else {throw new Error ('errore nella chiamata')}
     }catch(error){
         console.log('ERROR',error)
     }
 }
+
+componentDidMount(){this.getmeteoData()}
 
 render(){
     return(
