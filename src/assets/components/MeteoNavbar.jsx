@@ -3,7 +3,7 @@ const MeteoNavbar = function(){
     return(
         <Navbar expand="md" bg="dark" data-bs-theme="dark">
         <Container fluid>
-          <Navbar.Brand href="#">LOGO </Navbar.Brand>
+          <Navbar.Brand href="#" className="text-primary"><img className="logo" src="src/assets/image/th (1).jpeg"/> METEO </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -24,7 +24,7 @@ const MeteoNavbar = function(){
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-secondary">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

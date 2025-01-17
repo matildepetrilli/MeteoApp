@@ -17,7 +17,7 @@ class MeteoHome extends Component{
     <Form.Select aria-label="Meteo chooser dropdown" value={this.state.meteoCity} 
     onChange={e=>{
         this.setState({meteoCity:e.target.value,})}}>
-    <option>Rome</option>
+    <option >Rome</option>
     <option>Milano</option>
     <option>Venezia</option>
     <option >Bari</option>
