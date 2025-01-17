@@ -11,10 +11,11 @@ state={
 
 getmeteoData= async() =>{
     try{
-const response = await fetch(URL + this.props.meteoCity)
+const response = await fetch (URL + this.prop.meteoCity)
 if(response.ok){
    const data= await response.json()
-   console.log('dati da API',data)
+   console.log('dati da API',data.id)
+   this.setState.id
 }else {throw new Error ('errore nella chiamata')}
     }catch(error){
         console.log('ERROR',error)
@@ -26,14 +27,14 @@ componentDidMount(){this.getmeteoData()}
 render(){
     return(
         <Card >
-        <Card.Img variant="top" src="https://placecats.com/300/300" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <Card.Title>{this.state.meteoData.name}</Card.Title>
+          <Card.Text>{this.state.meteoData.main}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Text>{this.state.meteoData.weather}
+          </Card.Text>
+          
+          <Button variant="primary">Info</Button>
         </Card.Body>
       </Card>
     )
