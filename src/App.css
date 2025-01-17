@@ -1,6 +1,7 @@
-*{
-    background-color: black;
-}
+body,html {background-color: black; }
+
+
 .logo{
     width:120px;
 }
+

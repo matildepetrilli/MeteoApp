@@ -11,7 +11,7 @@ const MeteoNavbar = function(){
               navbarScroll
             >
               <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Luogo</Nav.Link>
+              <Nav.Link href="#action2">Info</Nav.Link>
               <Nav.Link href="#action2">30 day</Nav.Link>
               <Nav.Link href="#" disabled>
                 Link

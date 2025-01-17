@@ -4,22 +4,22 @@ const MeteoFooter = function(){
         <div>
           <h5>Seguici sui nostri social!</h5>
           <div className="d-flex justify-content-center">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
-              <i className="bi bi-facebook" style={{ fontSize: '2rem' }}></i>
+            <a href="" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
+              <i className="bi bi-facebook" ></i>
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
-              <i className="bi bi-twitter" style={{ fontSize: '2rem' }}></i>
+            <a href="" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
+              <i className="bi bi-twitter" ></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
-              <i className="bi bi-instagram" style={{ fontSize: '2rem' }}></i>
+            <a href="" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
+              <i className="bi bi-instagram" ></i>
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
-              <i className="bi bi-linkedin" style={{ fontSize: '2rem' }}></i>
+            <a href="" target="_blank" rel="noopener noreferrer" className="text-white mx-3">
+              <i className="bi bi-linkedin"></i>
             </a>
           </div>
         </div>
         <div className="mt-3">
-          <p>&copy; 2025 Matilde.y</p>
+          <p>&copy; 2025 Matilde.</p>
         </div>
       </footer>)}
 

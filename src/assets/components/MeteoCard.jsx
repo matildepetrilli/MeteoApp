@@ -2,6 +2,7 @@ import {Component} from 'react'
 import{Card, Button} from 'react-bootstrap'
 
 
+
 class MeteoCard extends Component{
 state={
     meteoData: {},
@@ -36,22 +37,23 @@ getMeteoData = async () => {
     const { meteoData } = this.state;
 
     return (
-      <Card>
+      <Card className='bg-dark'>
         <Card.Body>
           {meteoData.name ? (
             <>
-              <Card.Title>{meteoData.name}, {meteoData.sys?.country}</Card.Title>
-              <Card.Text>
+              <Card.Title className='text-light'>{meteoData.name}, {meteoData.sys?.country}</Card.Title>
+              <Card.Text className='text-light'>
                 <strong className="text-primary">Temperatura:</strong> {meteoData.main?.temp}°C
               </Card.Text>
-              <Card.Text>
+              <Card.Text className='text-light'>
                 <strong className="text-primary">Condizione:</strong> {meteoData.weather?.[0]?.description}
               </Card.Text>
             </>
           ) : (
-            <Card.Text>Caricamento dati...</Card.Text>
+            <Card.Text className='text-light'>Caricamento dati...</Card.Text>
           )}
-          <Button variant="primary">Info</Button>
+          
+          <Button variant="primary" href="./MeteoInfo">Info</Button>
         </Card.Body>
       </Card>
     );
