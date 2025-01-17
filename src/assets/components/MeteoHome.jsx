@@ -30,7 +30,7 @@ class MeteoHome extends Component{
   </Form.Select>
  </Col>
 </Row>
-<Row className="justify-content-center">
+<Row className="justify-content-center mt-3">
   <Col xs={12} md={8}>
     <MeteoCard meteoCity={this.state.City}/>
   </Col>

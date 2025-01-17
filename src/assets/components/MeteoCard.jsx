@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import{Card, Button} from 'react-bootstrap'
 
-const URL = 'https://api.openweathermap.org/data/2.5/weather?q=';
 
 class MeteoCard extends Component{
 state={
@@ -9,7 +8,7 @@ state={
 }
 getMeteoData = async () => {
     try {
-      const response = await fetch(`${URL}${this.props.meteoCity}&appid=1f11b5ab697d3df7399a106878000956&units=metric`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.meteoCity}&appid=1f11b5ab697d3df7399a106878000956&units=metric`);
       if (response.ok) {
         const data = await response.json();
         console.log('dati da API', data); // Visualizza l'intero oggetto dei dati
