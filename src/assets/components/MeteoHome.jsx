@@ -5,8 +5,12 @@ import MeteoCard from "./MeteoCard";
 
 class MeteoHome extends Component{
     state={
-        meteoCity:'Rome',
+        City:'Rome',
     }
+
+    cityChange = (e) => {
+        this.setState({ City: e.target.value });  // Aggiorna lo stato con la città selezionata
+      }
 
     render(){
   return( 
@@ -14,9 +18,9 @@ class MeteoHome extends Component{
 <Row className="justify-content-center">
   <Col xs={12} md={8}>
     <h1 className="text-center mt-2">Seleziona la tua città</h1>
-    <Form.Select aria-label="Meteo chooser dropdown" value={this.state.meteoCity} 
-    onChange={e=>{
-        this.setState({meteoCity:e.target.value,})}}>
+    <Form.Select aria-label="Meteo chooser dropdown" value={this.state.City} 
+    onChange={
+        this.cityChange}>
     <option >Rome</option>
     <option>Milano</option>
     <option>Venezia</option>
@@ -28,7 +32,7 @@ class MeteoHome extends Component{
 </Row>
 <Row className="justify-content-center">
   <Col xs={12} md={8}>
-    <MeteoCard meteoCity={this.state.meteoCity}/>
+    <MeteoCard meteoCity={this.state.City}/>
   </Col>
 </Row>
 </Container>

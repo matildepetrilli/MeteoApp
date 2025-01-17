@@ -7,43 +7,56 @@ class MeteoCard extends Component{
 state={
     meteoData: {},
 }
-
-getmeteoData= async() =>{
-    try{
-const response = await fetch (`${URL}${this.props.meteoCity}&appid=1f11b5ab697d3df7399a106878000956&units=metric`)
-if(response.ok){
-   const data= await response.json()
-   console.log('dati da API',data.id)
-   this.setState.id
-}else {throw new Error ('errore nella chiamata')}
-    }catch(error){
-        console.log('ERROR',error)
+getMeteoData = async () => {
+    try {
+      const response = await fetch(`${URL}${this.props.meteoCity}&appid=1f11b5ab697d3df7399a106878000956&units=metric`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('dati da API', data); // Visualizza l'intero oggetto dei dati
+        this.setState({ meteoData: data }); // Aggiorna lo stato con i dati ricevuti
+      } else {
+        throw new Error('Errore nella chiamata');
+      }
+    } catch (error) {
+      console.log('ERROR', error);
     }
-}
+  }
 
-componentDidMount(){
-this.getmeteoData()
+  componentDidMount() {
+    this.getMeteoData();  // Chiama getMeteoData quando il componente viene montato
+  }
+
+  componentDidUpdate(prevProps) {
+    // Esegui la chiamata API solo se la città è cambiata
+    if (prevProps.meteoCity !== this.props.meteoCity) {
+      this.getMeteoData();
     }
+  }
 
-    componentDidUpdate(prevProps){
-        if(prevProps.meteoCity !== this.props.meteoCity){ this.getmeteoData()}
-    }
+  render() {
+    const { meteoData } = this.state;
 
-render(){
-    return(
-        <Card >
+    return (
+      <Card>
         <Card.Body>
-          <Card.Title>{this.state.meteoData.name}</Card.Title>
-          <Card.Text>{this.state.meteoData.main}
-          </Card.Text>
-          <Card.Text>{this.state.meteoData.weather}
-          </Card.Text>
-          
+          {meteoData.name ? (
+            <>
+              <Card.Title>{meteoData.name}, {meteoData.sys?.country}</Card.Title>
+              <Card.Text>
+                <strong className="text-primary">Temperatura:</strong> {meteoData.main?.temp}°C
+              </Card.Text>
+              <Card.Text>
+                <strong className="text-primary">Condizione:</strong> {meteoData.weather?.[0]?.description}
+              </Card.Text>
+            </>
+          ) : (
+            <Card.Text>Caricamento dati...</Card.Text>
+          )}
           <Button variant="primary">Info</Button>
         </Card.Body>
       </Card>
-    )
-}
+    );
+  }
 }
 
 export default MeteoCard;
