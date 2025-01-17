@@ -9,7 +9,7 @@ class MeteoHome extends Component{
     }
 
     cityChange = (e) => {
-        this.setState({ City: e.target.value });  // Aggiorna lo stato con la città selezionata
+        this.setState({ City: e.target.value });  
       }
 
     render(){

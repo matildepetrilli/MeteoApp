@@ -12,8 +12,8 @@ getMeteoData = async () => {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.meteoCity}&appid=1f11b5ab697d3df7399a106878000956&units=metric`);
       if (response.ok) {
         const data = await response.json();
-        console.log('dati da API', data); // Visualizza l'intero oggetto dei dati
-        this.setState({ meteoData: data }); // Aggiorna lo stato con i dati ricevuti
+        console.log('dati da API', data); 
+        this.setState({ meteoData: data }); 
       } else {
         throw new Error('Errore nella chiamata');
       }
@@ -23,11 +23,10 @@ getMeteoData = async () => {
   }
 
   componentDidMount() {
-    this.getMeteoData();  // Chiama getMeteoData quando il componente viene montato
+    this.getMeteoData();  
   }
 
   componentDidUpdate(prevProps) {
-    // Esegui la chiamata API solo se la città è cambiata
     if (prevProps.meteoCity !== this.props.meteoCity) {
       this.getMeteoData();
     }
